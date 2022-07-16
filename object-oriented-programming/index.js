@@ -72,10 +72,26 @@
 
 // ========== Verify an Object's Constructor with instanceof ==========
 
-function House(numBedrooms) {
-  this.numBedrooms = numBedrooms;
+// function House(numBedrooms) {
+//   this.numBedrooms = numBedrooms;
+// }
+
+// const myHouse = new House(4);
+
+// console.log(myHouse instanceof House);
+
+// ========== Understand Own Properties ==========
+
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
 }
 
-const myHouse = new House(4);
+let canary = new Bird("Tweety");
+let ownProps = [];
 
-console.log(myHouse instanceof House);
+for (let property in canary) {
+  if (canary.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
