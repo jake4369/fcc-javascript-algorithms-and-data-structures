@@ -129,10 +129,40 @@
 
 // ========== Understanding the Constructor Property ==========
 
+// function Dog(name) {
+//   this.name = name;
+// }
+
+// function joinDogFraternity(candidate) {
+//   return candidate.constructor === Dog;
+// }
+
+// ========== Change the Prototype to a New Object ==========
+
 function Dog(name) {
   this.name = name;
 }
 
-function joinDogFraternity(candidate) {
-  return candidate.constructor === Dog;
+Dog.prototype = {
+  numLegs: 4,
+  eat() {
+    console.log("nom nom nom");
+  },
+  describe() {
+    console.log(`My name is ${this.name}`);
+  },
+};
+
+const bulldog = new Dog("George");
+
+// Iterate Over All Properties
+let ownProps = [];
+let prototypeProps = [];
+
+for (let property in bulldog) {
+  bulldog.hasOwnProperty(property)
+    ? ownProps.push(property)
+    : prototypeProps.push(property);
 }
+console.log(ownProps);
+console.log(prototypeProps);
