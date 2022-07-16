@@ -208,21 +208,32 @@ function Dog(name) {
 
 // ========== Use Inheritance So You Don't Repeat Yourself ==========
 
-function Cat(name) {
-  this.name = name;
-}
+// function Cat(name) {
+//   this.name = name;
+// }
 
-Cat.prototype = {
-  constructor: Cat,
-};
+// Cat.prototype = {
+//   constructor: Cat,
+// };
 
-function Bear(name) {
-  this.name = name;
-}
+// function Bear(name) {
+//   this.name = name;
+// }
 
-Bear.prototype = {
-  constructor: Bear,
-};
+// Bear.prototype = {
+//   constructor: Bear,
+// };
+
+// function Animal() {}
+
+// Animal.prototype = {
+//   constructor: Animal,
+//   eat: function () {
+//     console.log("nom nom nom");
+//   },
+// };
+
+// ========== Inherit Behaviors from a Supertype ==========
 
 function Animal() {}
 
@@ -232,3 +243,6 @@ Animal.prototype = {
     console.log("nom nom nom");
   },
 };
+
+let duck = Object.create(Animal.prototype);
+let beagle = Object.create(Animal.prototype);
