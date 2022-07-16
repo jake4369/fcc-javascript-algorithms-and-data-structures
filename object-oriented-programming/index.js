@@ -196,12 +196,39 @@ function Dog(name) {
 
 // ========== Understand the Prototype Chain ==========
 
-function Dog(name) {
+// function Dog(name) {
+//   this.name = name;
+// }
+
+// let beagle = new Dog("Snoopy");
+
+// Dog.prototype.isPrototypeOf(beagle); // yields true
+
+// Object.prototype.isPrototypeOf(Dog.prototype);
+
+// ========== Use Inheritance So You Don't Repeat Yourself ==========
+
+function Cat(name) {
   this.name = name;
 }
 
-let beagle = new Dog("Snoopy");
+Cat.prototype = {
+  constructor: Cat,
+};
 
-Dog.prototype.isPrototypeOf(beagle); // yields true
+function Bear(name) {
+  this.name = name;
+}
 
-Object.prototype.isPrototypeOf(Dog.prototype);
+Bear.prototype = {
+  constructor: Bear,
+};
+
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
