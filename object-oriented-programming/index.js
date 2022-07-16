@@ -82,16 +82,26 @@
 
 // ========== Understand Own Properties ==========
 
-function Bird(name) {
+// function Bird(name) {
+//   this.name = name;
+//   this.numLegs = 2;
+// }
+
+// let canary = new Bird("Tweety");
+// let ownProps = [];
+
+// for (let property in canary) {
+//   if (canary.hasOwnProperty(property)) {
+//     ownProps.push(property);
+//   }
+// }
+
+// ========== Use Prototype Properties to Reduce Duplicate Code ==========
+
+function Dog(name) {
   this.name = name;
-  this.numLegs = 2;
 }
 
-let canary = new Bird("Tweety");
-let ownProps = [];
+Dog.prototype.numLegs = 4;
 
-for (let property in canary) {
-  if (canary.hasOwnProperty(property)) {
-    ownProps.push(property);
-  }
-}
+let beagle = new Dog("Snoopy");
