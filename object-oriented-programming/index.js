@@ -303,20 +303,43 @@ Dog.prototype = Object.create(Animal.prototype);
 
 // ========== Override Inherited Methods ==========
 
-function Bird() {}
+// function Bird() {}
 
-Bird.prototype.fly = function () {
-  return "I am flying!";
-};
+// Bird.prototype.fly = function () {
+//   return "I am flying!";
+// };
 
-function Penguin() {}
-Penguin.prototype = Object.create(Bird.prototype);
-Penguin.prototype.constructor = Penguin;
+// function Penguin() {}
+// Penguin.prototype = Object.create(Bird.prototype);
+// Penguin.prototype.constructor = Penguin;
 
 // Override inherited fly method
-Penguin.prototype.fly = function () {
-  return "Alas, this is a flightless bird.";
-};
+// Penguin.prototype.fly = function () {
+//   return "Alas, this is a flightless bird.";
+// };
 
-let penguin = new Penguin();
-console.log(penguin.fly());
+// let penguin = new Penguin();
+// console.log(penguin.fly());
+
+// ========== Use a Mixin to Add Common Behavior Between Unrelated Objects ==========
+
+// let bird = {
+//   name: "Donald",
+//   numLegs: 2,
+// };
+
+// let boat = {
+//   name: "Warrior",
+//   type: "race-boat",
+// };
+
+// let glideMixin = function (obj) {
+//   obj.glide = function () {
+//     console.log(`The ${this.name} is Gliding!`);
+//   };
+// };
+
+// glideMixin(bird);
+// glideMixin(boat);
+// bird.glide();
+// boat.glide();
