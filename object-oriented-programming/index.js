@@ -139,11 +139,42 @@
 
 // ========== Change the Prototype to a New Object ==========
 
+// function Dog(name) {
+//   this.name = name;
+// }
+
+// Dog.prototype = {
+//   numLegs: 4,
+//   eat() {
+//     console.log("nom nom nom");
+//   },
+//   describe() {
+//     console.log(`My name is ${this.name}`);
+//   },
+// };
+
+// const bulldog = new Dog("George");
+
+// Iterate Over All Properties
+// let ownProps = [];
+// let prototypeProps = [];
+
+// for (let property in bulldog) {
+//   bulldog.hasOwnProperty(property)
+//     ? ownProps.push(property)
+//     : prototypeProps.push(property);
+// }
+// console.log(ownProps);
+// console.log(prototypeProps);
+
+// ========== Remember to Set the Constructor Property when Changing the Prototype ==========
 function Dog(name) {
   this.name = name;
 }
 
+// Only change code below this line
 Dog.prototype = {
+  constuctor: Dog,
   numLegs: 4,
   eat() {
     console.log("nom nom nom");
@@ -152,17 +183,3 @@ Dog.prototype = {
     console.log(`My name is ${this.name}`);
   },
 };
-
-const bulldog = new Dog("George");
-
-// Iterate Over All Properties
-let ownProps = [];
-let prototypeProps = [];
-
-for (let property in bulldog) {
-  bulldog.hasOwnProperty(property)
-    ? ownProps.push(property)
-    : prototypeProps.push(property);
-}
-console.log(ownProps);
-console.log(prototypeProps);
