@@ -17,14 +17,26 @@
 
 // ========== Create a method on an Object ==========
 
+// let dog = {
+//   name: "Spot",
+//   numLegs: 4,
+//   sayLegs: function () {
+//     return "This dog has " + dog.numLegs + " legs.";
+//   },
+//   sayLegs() {
+//     return `This dog has ${dog.numLegs} legs.`;
+//   },
+// };
+
+// dog.sayLegs();
+
+// ========== Make Code More Reusable with the this Keyword ==========
+
 let dog = {
   name: "Spot",
   numLegs: 4,
-  //   sayLegs: function () {
-  //     return "This dog has " + dog.numLegs + " legs.";
-  //   },
   sayLegs() {
-    return `This dog has ${dog.numLegs} legs.`;
+    return `This dog has ${this.numLegs} legs.`;
   },
 };
 
