@@ -32,12 +32,20 @@
 
 // ========== Make Code More Reusable with the this Keyword ==========
 
-let dog = {
-  name: "Spot",
-  numLegs: 4,
-  sayLegs() {
-    return `This dog has ${this.numLegs} legs.`;
-  },
-};
+// let dog = {
+//   name: "Spot",
+//   numLegs: 4,
+//   sayLegs() {
+//     return `This dog has ${this.numLegs} legs.`;
+//   },
+// };
 
-dog.sayLegs();
+// dog.sayLegs();
+
+// ========== Define a Constructor Function ==========
+
+function Dog() {
+  this.name = "Spot";
+  this.color = "brown";
+  this.numLegs = 4;
+}
