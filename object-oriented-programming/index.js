@@ -98,6 +98,16 @@
 
 // ========== Use Prototype Properties to Reduce Duplicate Code ==========
 
+// function Dog(name) {
+//   this.name = name;
+// }
+
+// Dog.prototype.numLegs = 4;
+
+// let beagle = new Dog("Snoopy");
+
+// ========== Iterate Over All Properties ==========
+
 function Dog(name) {
   this.name = name;
 }
@@ -105,3 +115,14 @@ function Dog(name) {
 Dog.prototype.numLegs = 4;
 
 let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+for (let property in beagle) {
+  if (beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
