@@ -62,10 +62,20 @@
 
 // ========== Extend Constructors to Receive Arguments ==========
 
-function Dog(name, color) {
-  this.name = name;
-  this.color = color;
-  this.numLegs = 4;
+// function Dog(name, color) {
+//   this.name = name;
+//   this.color = color;
+//   this.numLegs = 4;
+// }
+
+// const terrier = new Dog("Rupert", "brown");
+
+// ========== Verify an Object's Constructor with instanceof ==========
+
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
 }
 
-const terrier = new Dog("Rupert", "brown");
+const myHouse = new House(4);
+
+console.log(myHouse instanceof House);
