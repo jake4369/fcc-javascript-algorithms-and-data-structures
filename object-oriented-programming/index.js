@@ -173,16 +173,16 @@ function Dog(name) {
 }
 
 // Only change code below this line
-Dog.prototype = {
-  constuctor: Dog,
-  numLegs: 4,
-  eat() {
-    console.log("nom nom nom");
-  },
-  describe() {
-    console.log(`My name is ${this.name}`);
-  },
-};
+// Dog.prototype = {
+//   constuctor: Dog,
+//   numLegs: 4,
+//   eat() {
+//     console.log("nom nom nom");
+//   },
+//   describe() {
+//     console.log(`My name is ${this.name}`);
+//   },
+// };
 
 // ========== Understand Where an Object’s Prototype Comes From ==========
 
@@ -193,3 +193,15 @@ Dog.prototype = {
 // let beagle = new Dog("Snoopy");
 
 // console.log(Dog.prototype.isPrototypeOf(beagle));
+
+// ========== Understand the Prototype Chain ==========
+
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+Dog.prototype.isPrototypeOf(beagle); // yields true
+
+Object.prototype.isPrototypeOf(Dog.prototype);
