@@ -346,10 +346,52 @@ Dog.prototype = Object.create(Animal.prototype);
 
 // ========== Use Closure to Protect Properties Within an Object from Being Modified Externally ==========
 
-function Bird() {
-  let weight = 15;
+// function Bird() {
+//   let weight = 15;
 
-  this.getWeight = function () {
-    return weight;
+//   this.getWeight = function () {
+//     return weight;
+//   };
+// }
+
+// ========== Understand the Immediately Invoked Function Expression (IIFE) ==========
+
+// function makeNest() {
+//   console.log("A cozy nest is ready");
+// }
+
+// makeNest();
+
+// (IIFE)
+// (function () {
+//   console.log("A cozy nest is ready");
+// })();
+
+// ========== Understand the Immediately Invoked Function Expression (IIFE) ==========
+
+// let isCuteMixin = function(obj) {
+//     obj.isCute = function() {
+//       return true;
+//     };
+//   };
+//   let singMixin = function(obj) {
+//     obj.sing = function() {
+//       console.log("Singing to an awesome tune");
+//     };
+//   };
+
+let funModule = (function () {
+  return {
+    isCuteMixin: function (obj) {
+      obj.isCute = function () {
+        return true;
+      };
+    },
+
+    singMixin: function (obj) {
+      obj.sing = function () {
+        console.log("Singing to an awesome tune");
+      };
+    },
   };
-}
+})();
